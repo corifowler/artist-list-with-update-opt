@@ -1,6 +1,6 @@
-## Welcome to My Project
+## Assignment 20
 
-> I am your Readme.md file, you should probably update me.
+* this is a list of top 15 artists, you are able to add a new artist to the list
 
 
 ## Usage
