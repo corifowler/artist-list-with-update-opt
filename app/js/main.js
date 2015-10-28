@@ -237,6 +237,7 @@ exports['default'] = _backbone2['default'].Router.extend({
   },
 
   newArtist: function newArtist() {
+    this.showSpinner();
     this.$el.html((0, _views.NewArtist)());
   }
 

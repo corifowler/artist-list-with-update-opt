@@ -103,6 +103,7 @@ export default Backbone.Router.extend({
   },
 
   newArtist() {
+    this.showSpinner();
     this.$el.html(NewArtist());
   }
 
