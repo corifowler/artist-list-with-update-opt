@@ -1,7 +1,7 @@
 export default function(data) {
   return `
     <div class="artist">
-      <button class="back-button" data-to="people">
+      <button class="back-button" data-to="artists">
         <i class="fa fa-arrow-left"></i>
       </button>
       <div><img src="${data.Photo}"></div>
