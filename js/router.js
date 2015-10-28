@@ -6,13 +6,15 @@ import {Artists as ArtistCollection} from './resources';
 import {Artist as ArtistView} from './views';
 import {Artists as ArtistsView} from './views';
 import {Spinner} from './views';
+import {NewArtist} from './views';
 
 export default Backbone.Router.extend({
 
   routes: {
     "": "redirectToArtists",
     "artists": "showArtists",
-    "artist/:id": "showArtist"
+    "artist/:id": "showArtist",
+    "addArtist": "newArtist"
   },
 
   initialize(appElement) {
@@ -31,6 +33,12 @@ export default Backbone.Router.extend({
       let $button = $(event.currentTarget);
       let route = $button.data('to');
       this.navigate(route, {trigger: true});
+    });
+
+    this.$el.on('click', '.create-artist', (event) => {
+      console.log('should take me to update form');
+      let $div = $(event.currentTarget);
+      this.navigate(`addArtist`, {trigger: true});
     });
   },
 
@@ -66,6 +74,10 @@ export default Backbone.Router.extend({
         this.$el.html(ArtistView(artist.toJSON()));
       });
     }
+  },
+
+  newArtist() {
+    this.$el.html(NewArtist());
   }
 
 });

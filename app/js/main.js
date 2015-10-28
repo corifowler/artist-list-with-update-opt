@@ -17,7 +17,7 @@ _jquery2['default'].ajaxSetup({
   }
 });
 
-},{"jquery":12}],2:[function(require,module,exports){
+},{"jquery":13}],2:[function(require,module,exports){
 'use strict';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
@@ -45,7 +45,7 @@ console.log('Hello, World');
 var $app = (0, _jquery2['default'])('.app');
 new _router2['default']($app).start();
 
-},{"./ajax_setup":1,"./router":6,"jquery":12,"moment":13,"underscore":14}],3:[function(require,module,exports){
+},{"./ajax_setup":1,"./router":6,"jquery":13,"moment":14,"underscore":15}],3:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -67,7 +67,7 @@ exports['default'] = _backbone2['default'].Model.extend({
 });
 module.exports = exports['default'];
 
-},{"backbone":11}],4:[function(require,module,exports){
+},{"backbone":12}],4:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -97,7 +97,7 @@ exports['default'] = _backbone2['default'].Collection.extend({
 });
 module.exports = exports['default'];
 
-},{"./artist":3,"backbone":11}],5:[function(require,module,exports){
+},{"./artist":3,"backbone":12}],5:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -143,7 +143,8 @@ exports['default'] = _backbone2['default'].Router.extend({
   routes: {
     "": "redirectToArtists",
     "artists": "showArtists",
-    "artist/:id": "showArtist"
+    "artist/:id": "showArtist",
+    "addArtist": "newArtist"
   },
 
   initialize: function initialize(appElement) {
@@ -164,6 +165,12 @@ exports['default'] = _backbone2['default'].Router.extend({
       var $button = (0, _jquery2['default'])(event.currentTarget);
       var route = $button.data('to');
       _this.navigate(route, { trigger: true });
+    });
+
+    this.$el.on('click', '.create-artist', function (event) {
+      console.log('should take me to update form');
+      var $div = (0, _jquery2['default'])(event.currentTarget);
+      _this.navigate('addArtist', { trigger: true });
     });
   },
 
@@ -203,12 +210,16 @@ exports['default'] = _backbone2['default'].Router.extend({
         _this3.$el.html((0, _views.Artist)(artist.toJSON()));
       });
     }
+  },
+
+  newArtist: function newArtist() {
+    this.$el.html((0, _views.NewArtist)());
   }
 
 });
 module.exports = exports['default'];
 
-},{"./resources":5,"./views":9,"backbone":11,"jquery":12}],7:[function(require,module,exports){
+},{"./resources":5,"./views":9,"backbone":12,"jquery":13}],7:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -234,7 +245,7 @@ function processData(data) {
 }
 
 exports['default'] = function (data) {
-  return '\n    <div class="artist-list">\n      <h1>Artists</h1>\n      <div>' + processData(data) + '</div>\n    </div>\n  ';
+  return '\n    <div class="artist-list">\n      <h1>Artists</h1>\n      <div>' + processData(data) + '</div>\n      <button class="create-artist"><i class="fa fa-plus"></i> Add New</button>\n    </div>\n  ';
 };
 
 module.exports = exports['default'];
@@ -260,11 +271,29 @@ var _spinner = require('./spinner');
 
 var _spinner2 = _interopRequireDefault(_spinner);
 
+var _new_artist = require('./new_artist');
+
+var _new_artist2 = _interopRequireDefault(_new_artist);
+
 exports.Artist = _artist2['default'];
 exports.Artists = _artists2['default'];
 exports.Spinner = _spinner2['default'];
+exports.NewArtist = _new_artist2['default'];
 
-},{"./artist":7,"./artists":8,"./spinner":10}],10:[function(require,module,exports){
+},{"./artist":7,"./artists":8,"./new_artist":10,"./spinner":11}],10:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports["default"] = function () {
+  return "\n    <div class=\"add-artist\">\n      <form>\n        <label>Artist: <input type=\"text\" name=\"Artist\"></label>\n        <label>Song: <input type=\"text\" name=\"SongTitle\"></label>\n        <label>Album: <input type=\"text\" name=\"Album\"></label>\n        <label>Twitter: <input type=\"text\" name=\"Twitter\"></label>\n        <label>Photo URL: <input type=\"text\" name=\"Photo\"></label>\n      </form>\n      <button class=\"add-new-artist\">Add New Artist</button>\n    </div>\n  ";
+};
+
+module.exports = exports["default"];
+
+},{}],11:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -277,7 +306,7 @@ exports["default"] = function () {
 
 module.exports = exports["default"];
 
-},{}],11:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 (function (global){
 //     Backbone.js 1.2.3
 
@@ -2176,7 +2205,7 @@ module.exports = exports["default"];
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"jquery":12,"underscore":14}],12:[function(require,module,exports){
+},{"jquery":13,"underscore":15}],13:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.1.4
  * http://jquery.com/
@@ -11388,7 +11417,7 @@ return jQuery;
 
 }));
 
-},{}],13:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 //! moment.js
 //! version : 2.10.6
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
@@ -14584,7 +14613,7 @@ return jQuery;
     return _moment;
 
 }));
-},{}],14:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 //     Underscore.js 1.8.3
 //     http://underscorejs.org
 //     (c) 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
