@@ -2,7 +2,7 @@ import Backbone from 'backbone';
 import $ from 'jquery';
 
 import {Artists as ArtistCollection} from './resources';
-
+import {Artist as ArtistModel} from './resources';
 import {Artist as ArtistView} from './views';
 import {Artists as ArtistsView} from './views';
 import {Spinner} from './views';
@@ -40,12 +40,38 @@ export default Backbone.Router.extend({
       let $div = $(event.currentTarget);
       this.navigate(`addArtist`, {trigger: true});
     });
+
+    this.$el.on('click', '.add-new-artist', (event) => {
+      console.log('I want to add new artist');
+
+      let artist = $(this.$el).find('.Artist').val();
+      let songTitle = $(this.$el).find('.SongTitle').val();
+      let album = $(this.$el).find('.Album').val();
+      let twitter = $(this.$el).find('.Twitter').val();
+      let photo = $(this.$el).find('.Photo').val();
+
+      let model = new ArtistModel({
+        Artist: artist,
+        SongTitle: songTitle,
+        Album: album,
+        Twitter: twitter,
+        Photo: photo   
+      });
+
+      this.collection.add(model);
+      model.save().then( () => {
+        alert('Your entry has been submitted!');
+        this.navigate(`artists`, {trigger: true});
+      });
+
+    });
   },
 
   start() {
     Backbone.history.start();
     return this;
   },
+
 
   showSpinner() {
     this.$el.html(Spinner());

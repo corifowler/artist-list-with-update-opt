@@ -172,6 +172,30 @@ exports['default'] = _backbone2['default'].Router.extend({
       var $div = (0, _jquery2['default'])(event.currentTarget);
       _this.navigate('addArtist', { trigger: true });
     });
+
+    this.$el.on('click', '.add-new-artist', function (event) {
+      console.log('I want to add new artist');
+
+      var artist = (0, _jquery2['default'])(_this.$el).find('.Artist').val();
+      var songTitle = (0, _jquery2['default'])(_this.$el).find('.SongTitle').val();
+      var album = (0, _jquery2['default'])(_this.$el).find('.Album').val();
+      var twitter = (0, _jquery2['default'])(_this.$el).find('.Twitter').val();
+      var photo = (0, _jquery2['default'])(_this.$el).find('.Photo').val();
+
+      var model = new _resources.Artist({
+        Artist: artist,
+        SongTitle: songTitle,
+        Album: album,
+        Twitter: twitter,
+        Photo: photo
+      });
+
+      _this.collection.add(model);
+      model.save().then(function () {
+        alert('Your entry has been submitted!');
+        _this.navigate('artists', { trigger: true });
+      });
+    });
   },
 
   start: function start() {
@@ -288,7 +312,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 exports["default"] = function () {
-  return "\n    <div class=\"add-artist\">\n      <form>\n        <label>Artist: <input type=\"text\" name=\"Artist\"></label>\n        <label>Song: <input type=\"text\" name=\"SongTitle\"></label>\n        <label>Album: <input type=\"text\" name=\"Album\"></label>\n        <label>Twitter: <input type=\"text\" name=\"Twitter\"></label>\n        <label>Photo URL: <input type=\"text\" name=\"Photo\"></label>\n      </form>\n      <button class=\"add-new-artist\">Add New Artist</button>\n    </div>\n  ";
+  return "\n    <div class=\"add-artist\">\n      <form>\n        <label>Artist: <input type=\"text\" class=\"Artist\"></label>\n        <label>Song: <input type=\"text\" class=\"SongTitle\"></label>\n        <label>Album: <input type=\"text\" class=\"Album\"></label>\n        <label>Twitter: <input type=\"text\" class=\"Twitter\"></label>\n        <label>Photo URL: <input type=\"text\" class=\"Photo\"></label>\n      </form>\n      <button class=\"add-new-artist\">Add New Artist</button>\n    </div>\n  ";
 };
 
 module.exports = exports["default"];
