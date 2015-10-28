@@ -2028,9 +2028,21 @@ body {
   background: #e2ebf3;
   font-family: 'Bree Serif', serif; }
 
+.app .twitter {
+  color: #50abf1; }
+
+.app .artist-list {
+  margin: 0 auto;
+  width: 30%; }
+  .app .artist-list h1 {
+    text-align: center; }
+
+.app .artist-list-item:hover {
+  background-color: #ffeff2; }
+
 .app img {
-  width: 75px;
-  height: 75px;
+  width: 25px;
+  height: 25px;
   border-radius: 50%; }
 
 .app .fa {
@@ -2038,19 +2050,25 @@ body {
 
 .app .create-artist {
   background: none;
-  border: 1px solid black; }
+  border: 1px solid black;
+  margin-bottom: 5%;
+  margin-left: 35%; }
 
 .app .artist {
-  max-width: 50%;
+  max-width: 27%;
+  margin: 0 auto;
   border: 1px solid black;
   border-radius: 10px;
-  padding: 5px; }
+  padding: 10px;
+  margin-top: 2%; }
+  .app .artist h2 {
+    text-align: center; }
   .app .artist img {
     width: 200px;
     height: 200px;
     border-radius: 10px;
-    margin-left: 16%;
-    margin-bottom: 5%; }
+    margin-left: 19%;
+    margin-bottom: 3%; }
   .app .artist .back-button {
     background: none;
     border: none;
@@ -2059,18 +2077,22 @@ body {
 
 .app .add-artist {
   margin: 0 auto;
-  margin-top: 5%;
+  margin-top: 3%;
   border: 1px solid black;
+  border-radius: 10px;
   padding: 10px;
   max-width: 30%; }
   .app .add-artist h2 {
     text-align: center; }
   .app .add-artist label {
     display: block;
-    padding: 10px; }
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 2%; }
   .app .add-artist .add-new-artist {
-    margin-left: 30%;
+    margin-left: 35%;
     background: none;
-    border: 1px solid black; }
+    border: 1px solid black;
+    margin-bottom: 3%; }
 
 /*# sourceMappingURL=main.css.map */

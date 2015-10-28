@@ -251,7 +251,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 exports["default"] = function (data) {
-  return "\n    <div class=\"artist\">\n      <button class=\"back-button\" data-to=\"artists\">\n        <i class=\"fa fa-arrow-left\"></i>\n      </button>\n      <div class=\"image\"><img src=\"" + data.Photo + "\"></div>\n      <div><i class=\"fa fa-user\"></i>" + data.Artist + "</div>\n      <hr>\n      <div><i class=\"fa fa-chevron-right\"></i>Song Title: " + data.SongTitle + "</div>\n      <hr>\n      <div><i class=\"fa fa-chevron-right\"></i>Album Name: " + data.Album + "</div>\n      <hr>\n      <div class=\"twitter\"><i class=\"fa fa-twitter\"></i>" + data.Twitter + "</div>\n    </div>";
+  return "\n    <div class=\"artist\">\n      <button class=\"back-button\" data-to=\"artists\">\n        <i class=\"fa fa-arrow-left\"></i>\n      </button>\n      <div class=\"image\"><img src=\"" + data.Photo + "\"></div>\n      <h2>Artist Profile</h2>\n      <div><i class=\"fa fa-user\"></i>" + data.Artist + "</div>\n      <hr>\n      <div><i class=\"fa fa-chevron-right\"></i>Song Title: " + data.SongTitle + "</div>\n      <hr>\n      <div><i class=\"fa fa-chevron-right\"></i>Album Name: " + data.Album + "</div>\n      <hr>\n      <div class=\"twitter\"><i class=\"fa fa-twitter\"></i>" + data.Twitter + "</div>\n    </div>";
 };
 
 module.exports = exports["default"];
