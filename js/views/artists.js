@@ -2,7 +2,9 @@ function processData(data) {
   return data.map(function(item) {
     return `
       <div class="artist-list-item" data-artist-id="${item.objectId}">
+        <img src="${item.Photo}">
         <span>${item.Artist}</span>
+        <hr>
       </div>
     `;
   }).join('');

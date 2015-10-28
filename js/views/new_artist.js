@@ -1,6 +1,7 @@
 export default function() {
   return `
     <div class="add-artist">
+      <h2>Add Artist</h2>
       <form>
         <label>Artist: <input type="text" class="Artist"></label>
         <label>Song: <input type="text" class="SongTitle"></label>

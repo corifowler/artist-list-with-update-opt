@@ -2025,6 +2025,52 @@ html {
   content: ""; }
 
 body {
-  background: #e2ebf3; }
+  background: #e2ebf3;
+  font-family: 'Bree Serif', serif; }
+
+.app img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%; }
+
+.app .fa {
+  padding: 5px; }
+
+.app .create-artist {
+  background: none;
+  border: 1px solid black; }
+
+.app .artist {
+  max-width: 50%;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 5px; }
+  .app .artist img {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    margin-left: 16%;
+    margin-bottom: 5%; }
+  .app .artist .back-button {
+    background: none;
+    border: none;
+    font-size: 25px;
+    padding: 5px; }
+
+.app .add-artist {
+  margin: 0 auto;
+  margin-top: 5%;
+  border: 1px solid black;
+  padding: 10px;
+  max-width: 30%; }
+  .app .add-artist h2 {
+    text-align: center; }
+  .app .add-artist label {
+    display: block;
+    padding: 10px; }
+  .app .add-artist .add-new-artist {
+    margin-left: 30%;
+    background: none;
+    border: 1px solid black; }
 
 /*# sourceMappingURL=main.css.map */

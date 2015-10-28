@@ -251,7 +251,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 exports["default"] = function (data) {
-  return "\n    <div class=\"artist\">\n      <button class=\"back-button\" data-to=\"artists\">\n        <i class=\"fa fa-arrow-left\"></i>\n      </button>\n      <div><img src=\"" + data.Photo + "\"></div>\n      <div><i class=\"fa fa-user\"></i>" + data.Artist + "</div>\n      <hr>\n      <div><i class=\"fa fa-chevron-right\"></i>Song Title: " + data.SongTitle + "</div>\n      <hr>\n      <div><i class=\"fa fa-chevron-right\"></i>Album Name: " + data.Album + "</div>\n      <hr>\n      <div class=\"twitter\"><i class=\"fa fa-twitter\"></i>" + data.Twitter + "</div>\n    </div>";
+  return "\n    <div class=\"artist\">\n      <button class=\"back-button\" data-to=\"artists\">\n        <i class=\"fa fa-arrow-left\"></i>\n      </button>\n      <div class=\"image\"><img src=\"" + data.Photo + "\"></div>\n      <div><i class=\"fa fa-user\"></i>" + data.Artist + "</div>\n      <hr>\n      <div><i class=\"fa fa-chevron-right\"></i>Song Title: " + data.SongTitle + "</div>\n      <hr>\n      <div><i class=\"fa fa-chevron-right\"></i>Album Name: " + data.Album + "</div>\n      <hr>\n      <div class=\"twitter\"><i class=\"fa fa-twitter\"></i>" + data.Twitter + "</div>\n    </div>";
 };
 
 module.exports = exports["default"];
@@ -264,7 +264,7 @@ Object.defineProperty(exports, '__esModule', {
 });
 function processData(data) {
   return data.map(function (item) {
-    return '\n      <div class="artist-list-item" data-artist-id="' + item.objectId + '">\n        <span>' + item.Artist + '</span>\n      </div>\n    ';
+    return '\n      <div class="artist-list-item" data-artist-id="' + item.objectId + '">\n        <img src="' + item.Photo + '">\n        <span>' + item.Artist + '</span>\n        <hr>\n      </div>\n    ';
   }).join('');
 }
 
@@ -312,7 +312,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 exports["default"] = function () {
-  return "\n    <div class=\"add-artist\">\n      <form>\n        <label>Artist: <input type=\"text\" class=\"Artist\"></label>\n        <label>Song: <input type=\"text\" class=\"SongTitle\"></label>\n        <label>Album: <input type=\"text\" class=\"Album\"></label>\n        <label>Twitter: <input type=\"text\" class=\"Twitter\"></label>\n        <label>Photo URL: <input type=\"text\" class=\"Photo\"></label>\n      </form>\n      <button class=\"add-new-artist\">Add New Artist</button>\n    </div>\n  ";
+  return "\n    <div class=\"add-artist\">\n      <h2>Add Artist</h2>\n      <form>\n        <label>Artist: <input type=\"text\" class=\"Artist\"></label>\n        <label>Song: <input type=\"text\" class=\"SongTitle\"></label>\n        <label>Album: <input type=\"text\" class=\"Album\"></label>\n        <label>Twitter: <input type=\"text\" class=\"Twitter\"></label>\n        <label>Photo URL: <input type=\"text\" class=\"Photo\"></label>\n      </form>\n      <button class=\"add-new-artist\">Add New Artist</button>\n    </div>\n  ";
 };
 
 module.exports = exports["default"];

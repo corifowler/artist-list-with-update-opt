@@ -4,7 +4,7 @@ export default function(data) {
       <button class="back-button" data-to="artists">
         <i class="fa fa-arrow-left"></i>
       </button>
-      <div><img src="${data.Photo}"></div>
+      <div class="image"><img src="${data.Photo}"></div>
       <div><i class="fa fa-user"></i>${data.Artist}</div>
       <hr>
       <div><i class="fa fa-chevron-right"></i>Song Title: ${data.SongTitle}</div>
