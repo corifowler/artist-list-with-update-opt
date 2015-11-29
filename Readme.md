@@ -1,4 +1,6 @@
-## Assignment 20
+## Top 15 Artist Contact List 
+
+> View project here: http://roasted-tiger.surge.sh/
 
 * this is a list of top 15 artists, you are able to add a new artist to the list
 
@@ -19,6 +21,8 @@
 
 ## Tools Used
 
+- [Backbone]
+- [Parse]
 - [Babel](https://babeljs.io/)
 - [Browserify](http://browserify.org/)
 - [JavaScript Code Style](http://jscs.info/)
